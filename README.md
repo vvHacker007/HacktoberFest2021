@@ -16,7 +16,7 @@
 <img align="left" width="1200" height="450" src="https://github.com/vvHacker007/HacktoberFest2021/blob/main/2.png">
  </p>
 <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br />
 
 # <div align="center" >Follow these steps to make your first Pull Request🔥</div>
 
