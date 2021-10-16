@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+
+    <style>
+
+        html{
+        background: url(https://unsplash.it/1500/1000?image=881&blur=5);
+        background-size: cover;
+        font-family: 'helvetica neue';
+        /* DOUBT ???*/
+        text-align: center;
+        /* DOUBT ??? */ 
+        font-size: 10px;  
+    }
+    
+    body{
+        margin: 0;
+         /* DOUBT ??? */ 
+        font-size: 2rem;  
+        flex: 1;
+        min-height: 100vh;
+        align-items: center;
+    }
+    
+    .clock{
+        height: 30rem;
+        width:  30rem;
+        border: 20px solid white;
+        border-radius: 50%;
+        margin: 50px auto;
+        padding:2rem; 
+        position: relative;
+    }
+    
+    .clockface{
+        position: relative;
+        height: 100%;
+        width: 100%;
+        /* CSS transforms allow you to move, rotate, scale, and skew elements. */
+        transform: translateY(-3px);
+    
+    }
+    
+    .hand {
+        width: 50%;
+        height: 6px;
+        background: black;
+        position: absolute;
+         top: 50%;
+         transform: rotate(90deg);
+         transform-origin: 100%;
+    }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="clock">
+        <div class="clockface">
+            <div class="hand hour"></div>
+            <div class="hand second"></div>
+            <div class="hand minute"></div>
+        </div>
+    </div>
+
+<script>
+    const seconds=document.querySelector('.second');
+    const minutes=document.querySelector('.minute');
+    const hours=document.querySelector('.hour');
+    function setDate()
+    {
+         const date = new Date(); //get present date and time and assign it to date object
+
+        const date_seconds = date.getSeconds(); // get present second
+        console.log(date_seconds);
+        const seconds_degree=(date_seconds/60)*360+90; // convert present seconds to degrees
+        seconds.style.transform=`rotate(${seconds_degree}deg)`; // apply transform rotate style to second div
+
+        const date_minutes = date.getMinutes(); // get present
+        const minutes_degree=(date_minutes/60)*360+90; // convert present minutes to degrees
+        minutes.style.transform=`rotate(${minutes_degree}deg)`;
+
+        const date_hours = date.getHours(); // get present hours
+        const hours_degree=(date_hours/12)*360+(date_minutes/60)*30+90; // convert present hours to degrees
+        hours.style.transform=`rotate(${hours_degree}deg)`;
+
+
+    }
+    setInterval(setDate, 1000);
+</script>
+    
+</body>
+</html>
